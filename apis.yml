@@ -1,7 +1,11 @@
 aid: belk
-url: https://raw.githubusercontent.com/api-evangelist/belk/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/belk/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.belk.com
+description: >-
+  Belk - FREE Shipping at Belk.com. Shop Belk for clothing, handbags, jewelry, beauty,
+  home & so much more! Clearance items available everyday!
