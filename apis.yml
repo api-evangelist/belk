@@ -27,6 +27,8 @@ tags:
   - Southeastern US
 apis: []
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/belk
   - type: Website
     url: https://www.belk.com
   - type: Portal
