@@ -1,7 +1,9 @@
 ---
 title: TCS ignio™ AIOps Helps Belk Secure AI Edge for Operations
 url: https://www.tcs.com/what-we-do/industries/retail/video/tcs-ignio-aiops-secure-ai-edge-operations
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Belk" press release artificial intelligence'
 position: 5
 source: serpapi-google

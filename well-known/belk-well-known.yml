@@ -1,0 +1,331 @@
+generated: '2026-09-19'
+method: probed
+source: 'live GET of every named /.well-known/* path (plus /apis.json, /apis.yml, /security.txt) on every host the
+  record knows: www.belk.com, belk.com, developer.belk.com, api.belk.com, vendorportal.belk.com. No OpenAPI servers[],
+  docs or MCP host exists for this provider.'
+result: 'no well-known documents served: not one path on any of the five hosts returned a 200 carrying a real document.
+  No WellKnown or SecurityTxt pointer is emitted because nothing was served. A 410/403/503/504 with an HTML body
+  is a miss, not a document.'
+hosts:
+- host: www.belk.com
+  note: Primary storefront (Salesforce Commerce Cloud behind Fastly/Varnish, PerimeterX bot management). Every /.well-known/*
+    path returned the SFCC 410 Gone page; /apis.json and /apis.yml were answered by the PerimeterX 403 challenge
+    page, which is our crawler being turned away, not a served document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/api-catalog
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/ucp.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/acp.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/apis.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /apis.json
+    status: 403
+    content_type: text/html
+    file: null
+  - path: /apis.yml
+    status: 403
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /.well-known/agent.json
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+  - path: /security.txt
+    status: 410
+    content_type: text/html;charset=UTF-8
+    file: null
+- host: belk.com
+  note: Registrable domain; every /.well-known/* path 301s to www.belk.com, where it 410s.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/ucp.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/acp.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/apis.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /apis.json
+    status: 403
+    content_type: text/html
+    file: null
+  - path: /apis.yml
+    status: 403
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    content_type: null
+    file: null
+  - path: /security.txt
+    status: 301
+    content_type: null
+    file: null
+- host: developer.belk.com
+  note: DANGLING CNAME -> dev-belk.devportal.apigee.com -> ui-ea.apigee.net (the legacy Apigee Edge devportal edge).
+    TLS presents *.apigee.com, HTTP 504 GATEWAY_TIMEOUT, and when it does answer it serves another tenant's Okta
+    sign-in ("Avery Dennison - Prod - iCore Developers Docs"). Belk once provisioned an Apigee developer portal
+    here; nothing Belk-owned is served today.
+  documents:
+  - path: /.well-known/security.txt
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/api-catalog
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/ucp.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/acp.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/apis.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /apis.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /apis.yml
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /.well-known/agent.json
+    status: 504
+    content_type: null
+    file: null
+  - path: /security.txt
+    status: 504
+    content_type: null
+    file: null
+- host: api.belk.com
+  note: Akamai edge (api.belk.com.edgekey.net) presenting a *.test.edgekey.net certificate (hostname mismatch);
+    https answers 503 AkamaiGHost on every path, http answers an empty 200 from nginx. Not a public API surface.
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/api-catalog
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/ucp.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/acp.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/apis.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /apis.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /apis.yml
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent.json
+    status: 503
+    content_type: text/html
+    file: null
+  - path: /security.txt
+    status: 503
+    content_type: text/html
+    file: null
+- host: vendorportal.belk.com
+  note: Belk Vendor Portal (login-gated supplier application; root path answers a WAF denial). Every probed path
+    404s.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /apis.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /apis.yml
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null
+  - path: /security.txt
+    status: 404
+    content_type: text/html; charset=iso-8859-1
+    file: null

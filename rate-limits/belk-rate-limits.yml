@@ -1,0 +1,30 @@
+generated: '2026-09-19'
+method: searched
+source: https://www.belk.com/customer-service/policies-guidelines/vendor-resources/
+limit_count: 0
+description: >-
+  Belk publishes no API rate limits because it publishes no HTTP API. The supplier integration
+  surface is batch X12 EDI over a VAN: the only cadence the documentation states is that purchase
+  orders "batch once a day, overnight, typically occurring around 3am EST" and "cannot be sent
+  individually outside of the batch" (EDI Vendor FAQ). That is a batch schedule, not a rate
+  limit, and is recorded here only so the zero is explained. limit_count is an honest zero.
+limits: []
+response_headers:
+  observed: []
+  checked_for: [RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After]
+  note: >-
+    No API host answers, so no rate-limit header could be observed. The storefront's PerimeterX
+    challenge page does carry "retry-after: 0", which is bot management on a web page, not an API
+    signal.
+exhaustion_status: null
+enforcement:
+  documented: false
+  inferred: >-
+    www.belk.com sits behind Fastly/Varnish and PerimeterX bot management, and api.belk.com behind
+    Akamai; both will throttle or block automated traffic, but nothing is documented and nothing is
+    signalled to a client.
+x-evidence:
+  fetched: '2026-09-19'
+  probes:
+  - {url: 'https://www.belk.com/', status: 403, note: PerimeterX challenge, retry-after 0}
+  - {url: 'https://api.belk.com/', status: 503, note: AkamaiGHost, hostname-mismatched *.test.edgekey.net cert}

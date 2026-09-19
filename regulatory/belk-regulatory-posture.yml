@@ -1,0 +1,41 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+source: https://www.belk.com/customer-service/policies-guidelines/privacy-policy/
+note: >-
+  Harvest only. Belk is a department-store retailer with no developer program, so the docs-site
+  signals (data residency, export/portability, age signals, support lifetime) have no place to
+  live and were not found. The legal surface that exists is the storefront's Policies & Guidelines
+  section: Privacy Policy (last updated July 1, 2026), Health Data Privacy Notice, Accessibility
+  Statement, CA Transparency Compliance (Supply Chains Act disclosure), Conflict Minerals Policy,
+  Terms of Use. Conventional paths probed live on 2026-09-19 (/legal/subprocessors, /legal/dpa,
+  /privacy/requests, /transparency, /trust, /security, /security/sbom, /ai, /ai/transparency,
+  /legal/report-content, /accessibility/vpat) were all answered by the PerimeterX 403 challenge
+  page rather than a document, and /accessibility, /privacy-policy, /legal/privacy-policy returned
+  the SFCC 410 page. The Accessibility Statement page
+  (https://www.belk.com/customer-service/policies-guidelines/accessibility-statement/, 200) serves
+  no conformance content in its HTML - no WCAG level, no VPAT, no dated report - so
+  accessibility_conformance is NOT recorded. The privacy policy discusses browser Do Not Track
+  signals but never mentions Global Privacy Control or opt-out preference signals, so
+  global_privacy_control is NOT recorded. No subprocessor list, DPA, SBOM, incident SLA,
+  transparency report, notice-and-action channel or AI disclosure is published.
+signals:
+  data_subject_request:
+    url: https://www.belk.com/customer-privacy-rights-request-form.html
+    channel: mailto:privacy_belk@belk.com
+    note: >-
+      A dedicated Privacy Rights Request Form (HTTP 200) for residents of 19 named US states
+      (California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota,
+      Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah,
+      Virginia), covering rights to know, access, correct, delete and "Shine the Light" requests,
+      with authorized-agent submission. The Privacy Policy names privacy_belk@belk.com for consent
+      revocation. No API endpoint is published.
+x-evidence:
+  fetched: '2026-09-19'
+  probes:
+  - {url: 'https://www.belk.com/customer-privacy-rights-request-form.html', status: 200}
+  - {url: 'https://www.belk.com/customer-service/policies-guidelines/privacy-policy/', status: 200}
+  - {url: 'https://www.belk.com/customer-service/policies-guidelines/accessibility-statement/', status: 200, note: no conformance content served}
+  - {url: 'https://www.belk.com/legal/subprocessors', status: 403, note: PerimeterX challenge}
+  - {url: 'https://www.belk.com/security/sbom', status: 403, note: PerimeterX challenge}
+  - {url: 'https://www.belk.com/accessibility/vpat', status: 403, note: PerimeterX challenge}

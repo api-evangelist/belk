@@ -1,7 +1,9 @@
 ---
 title: How Belk elevated its customer experience with ...
 url: https://martech.org/how-belk-elevated-its-customer-experience-with-personalization/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Belk" press release artificial intelligence'
 position: 3
 source: serpapi-google

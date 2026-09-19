@@ -1,0 +1,21 @@
+# Front Door AI Index — belk — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: belk
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.belk.com
+  final_host: www.belk.com
+  ownership: own
+  owner: belk
+  shares_host_with: null
+  inherited_from: null
+  verdict: unmeasured
+  score: null
+  host_score: null
+  density: null
+  words: null
+  tiers: null
+  ambiguous: null
+  top_terms: null

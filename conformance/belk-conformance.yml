@@ -1,0 +1,49 @@
+generated: '2026-09-19'
+method: searched
+source: https://www.belk.com/customer-service/policies-guidelines/vendor-resources/
+note: >-
+  Belk publishes no OpenAPI, AsyncAPI, GraphQL, gRPC or WSDL contract, so every API-level
+  standard (oauth2, oidc, json:api, rfc9457, pagination, idempotency) is unassessable rather
+  than false - there is no HTTP API to hold them. The one standard the company genuinely declares
+  for its own market is ANSI ASC X12 EDI, version 4030, which is the mandatory supplier
+  integration contract ("EDI is mandatory" - EDI Vendor FAQ). The implementation guides are
+  PDF-only and routed through a VAN (OpenText Trading Grid; no direct AS2 to Belk), so this is a
+  domain-standard signature carried by published mapping specifications, not by a
+  machine-readable contract.
+conformance:
+- id: x12-edi
+  standard: ANSI ASC X12 EDI
+  version: '4030'
+  conforms: true
+  scope: supplier purchase-order, shipment, invoice and remittance exchange (retail supply chain)
+  transaction_sets:
+  - {set: '212', name: Motor Carrier Delivery Trailer Manifest, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw3eb86c5f/media/pdf/VendorResources/EDI_Documents/212_4030_002.pdf'}
+  - {set: '214', name: Transportation Carrier Shipment Status Message, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw534ff987/media/pdf/VendorResources/EDI_Documents/214_4030.pdf'}
+  - {set: '810', name: Invoice, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dwdd7626cf/media/pdf/VendorResources/EDI_Documents/810Map2025.pdf'}
+  - {set: '820', name: Remittance Advice, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw5804df61/media/pdf/VendorResources/EDI_Documents/820_Remittance_Advice_122024.pdf'}
+  - {set: '824', name: Application Advice, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dwbf010ada/media/pdf/VendorResources/EDI_Documents/824_Application_Advice_2025.pdf'}
+  - {set: '850', name: Purchase Order, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw6505e1b6/media/pdf/VendorResources/EDI_Documents/Belk850PurchaseOrder.pdf'}
+  - {set: '852', name: Product Activity Data, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw72b89041/media/pdf/VendorResources/EDI_Documents/852_4030.pdf'}
+  - {set: '855', name: Purchase Order Acknowledgment, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dwf2070e50/media/pdf/VendorResources/EDI_Documents/855_4030.pdf'}
+  - {set: '856', name: Ship Notice / Manifest (ASN), url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw5c4189ea/media/pdf/VendorResources/EDI_Documents/856_Map_Spec_2024.pdf'}
+  - {set: '860', name: Purchase Order Change Request, url: 'https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dw96afcda3/media/pdf/VendorResources/EDI_Documents/Belk860POChangeRequest.pdf'}
+  - {set: '997', name: Functional Acknowledgment, note: 'Required in return for every transmission (EDI Vendor FAQ); no separate guide is published.'}
+  transport:
+    van_required: true
+    direct_as2: false
+    note: >-
+      "Belk has a managed EDI solution so all data must route through a VAN and you can use any VAN
+      of your choice. If you do not want to use a VAN you can have an AS2 connection to the Opentext
+      VAN." Purchase orders batch once a day, overnight, around 3am EST. (EDI Vendor FAQ)
+  contact: mailto:EDI@Belk.com
+  evidence:
+  - url: https://www.belk.com/customer-service/policies-guidelines/vendor-resources/
+    status: 200
+    note: Vendor Resources page listing the ten X12 4030 implementation guides
+  - url: https://www.belk.com/on/demandware.static/-/Sites-Belk-Library/default/dwd0ec369d/media/pdf/VendorResources/EDI_Documents/VendorFAQEDI.pdf
+    status: 200
+    note: EDI Vendor FAQ (PDF) - mandatory EDI, VAN routing, nightly PO batch, 997 acknowledgments
+  format: pdf
+  machine_readable: false
+x-evidence:
+  fetched: '2026-09-19'

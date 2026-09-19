@@ -1,0 +1,26 @@
+generated: '2026-09-19'
+method: searched
+source: https://www.belk.com/customer-service/policies-guidelines/vendor-resources/
+plan_count: 0
+api_plan_count: 0
+description: >-
+  Belk sells no API product and publishes no developer plans, free tier, metered pricing or
+  billable key. The only integration surface it publishes is a mandatory X12 EDI supplier
+  program whose costs sit with the vendor's own VAN / third-party EDI provider and with Belk's
+  vendor compliance chargebacks (Reason Code List, Vendor Business Requirements) - none of which
+  is an API plan. plan_count is an honest zero, not an unchecked field. The searched surfaces were
+  the Vendor Resources page, the EDI Vendor FAQ, the Drop Ship Program Vendor Participant
+  Policies and the customer-service policies index; no pricing page for any programmatic access
+  exists, and developer.belk.com is a dangling Apigee CNAME serving nothing of Belk's.
+plans: []
+enterprise:
+  contact_only: true
+  note: >-
+    Supplier onboarding is buyer-initiated ("A vendor# must be requested internally by the
+    Buyer") and marketplace / drop-ship participation runs through Rithum (CommerceHub) and
+    the vendor compliance team rather than any self-serve sign-up.
+x-evidence:
+  fetched: '2026-09-19'
+  probes:
+  - {url: 'https://www.belk.com/customer-service/policies-guidelines/vendor-resources/', status: 200}
+  - {url: 'https://developer.belk.com/', status: 504, note: dangling CNAME to ui-ea.apigee.net}
