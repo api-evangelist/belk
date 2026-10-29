@@ -1,4 +1,4 @@
-# Belk (belk)
+# Belk
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,61 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Belk is a privately-held American department store chain headquartered in
-Charlotte, North Carolina, serving the southeastern United States. The company
-sells clothing, handbags, jewelry, beauty products, and home goods. Belk
-operates an omnichannel retail model with physical stores and an online
-marketplace. Supplier and marketplace integrations are handled via EDI
-through value-added networks, with order management integration available
-through Rithum (formerly CommerceHub) and other channel management platforms.
+Belk is a privately-held American department store chain headquartered in Charlotte, North Carolina, serving the southeastern United States. The company sells clothing, handbags, jewelry, beauty products, and home goods. Belk operates an omnichannel retail model with physical stores and an online marketplace. Supplier and marketplace integrations are handled via EDI through value-added networks, with order management integration available through Rithum (formerly CommerceHub) and other channel management platforms. Belk publishes no public HTTP API, developer portal, OpenAPI or SDK: the only integration contract it publishes is the mandatory X12 4030 EDI supplier program (850/856/810/820/824/855/860 and more), documented as PDF implementation guides and routed through a VAN.
 
-**URL:** [https://www.belk.com](https://www.belk.com)
+**Areas:** Apparel · Beauty · Department Store · E-Commerce · Fashion · Home Goods · Jewelry · Marketplace · Retail · Southeastern US
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Belk on APIs.io
 
-## Tags:
+Everything profiled for Belk is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/belk/](https://apis.io/providers/belk/)** — or go straight to one of the APIs or properties below.
 
- - Apparel, Beauty, Department Store, E-Commerce, Fashion, Home Goods, Jewelry, Marketplace, Retail, Southeastern US
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-03-23
-- **Modified:** 2026-04-19
+#### Security (1)
 
-## Common Properties
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Belk Domain Security](https://apis.io/security/belk/belk-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Belk Plans Pricing](https://apis.io/plans/belk/belk-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Belk Rate Limits](https://apis.io/rate-limits/belk/belk-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.belk.com)
-- [Vendor Portal](https://www.belk.com/vendor-portal)
+- [Documentation](https://www.belk.com/customer-service/policies-guidelines/vendor-resources/)
+- [Support](https://www.belk.com/customer-service/)
+- [Terms of service](https://www.belk.com/customer-service/terms-of-use/)
+- [Privacy policy](https://www.belk.com/customer-service/policies-guidelines/privacy-policy/)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Omnichannel Retail | Belk operates physical stores across the southeastern United States alongside an online retail and marketplace presence at belk.com. |
-| Marketplace Seller Program | Third-party vendors can list and sell products on Belk.com through the marketplace program, integrated via Rithum (formerly CommerceHub) channel management platform. |
-| EDI Supplier Integration | Belk uses X12 EDI version 4030 for supplier integration, transmitted through value-added networks (VANs). Required documents include EDI 850 purchase orders, EDI 856 advance ship notices, and EDI 846 inventory feeds. |
-| Vendor Portal | Belk's vendor portal provides document specifications, EDI information, and vendor FAQ resources for suppliers to configure EDI integrations. |
+**Kin Score 17.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 21.1 |
 
-| Name | Description |
-|------|-------------|
-| Marketplace Selling | Third-party vendors integrate with the Belk marketplace to list products, receive orders, and manage fulfillment through approved channel platforms. |
-| EDI Supplier Compliance | Manufacturers and distributors connect to Belk's EDI network to exchange purchase orders, advance ship notices, and inventory feeds in X12 format. |
-| Retail Analytics | Retail suppliers and analytics platforms consume Belk point-of-sale data through retail portal integrations for demand planning and replenishment. |
+**Agent readiness 2.5** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Rithum (CommerceHub) | Rithum, formerly CommerceHub, is the primary integration platform for Belk marketplace sellers to manage orders, inventory, and fulfillment. |
-| Sellercloud | Sellercloud supports Belk account integration through Rithum for omnichannel ecommerce order management and inventory synchronization. |
-| Alloy.ai | Alloy.ai provides a Belk retailer portal integration for demand forecasting and retail analytics based on Belk point-of-sale data. |
-| Tradeshift | Tradeshift supports Belk supplier invoice and procurement document exchange through its B2B network integration. |
-| ConnectPointz | ConnectPointz provides EDI compliance and channel management integration for Belk marketplace and supplier connections. |
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/belk/](https://apis.io/providers/belk/).
 
-**FN:** Kin Lane
+## How this profile is made
 
-**Email:** kin@apievangelist.com
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Belk: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/belk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
